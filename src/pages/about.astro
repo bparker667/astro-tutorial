@@ -1,5 +1,12 @@
 ---
-
+const pageTitle = "About Me";
+const identity = {
+	firstName: "Buddy",
+	lastName: "Parker",
+	occupation: "Developer",
+	hobbies: ["Hiking", "Camping", "Traveling"],
+};
+const skills = ["HTML", "CSS", "PHP", "GO", "Front End Development", "Backend Development", "SaaS", "AI agents"];
 ---
 
 <html lang="en">
@@ -9,7 +16,7 @@
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Element Flux Blog</title>
+		<title>Element Flux Blog - {pageTitle}</title>
 	</head>
 	<body>
         
@@ -17,11 +24,18 @@
         <a href="/about/">About</a>
         <a href="/blog/">Blog</a>
 
-		<h1>About Me</h1>
+		<h1>{pageTitle}</h1>
         <h2>and my new Element Flux Blog site!</h2>
 
-        <p> I am working my way through Astro's introductory tutorial. This is the about page.</p>
+        <p>I'm {identity.firstName}, and I work as a {identity.occupation}.</p>
 
-        <p>This is a work in progress!</p>
+        <p>Here's a little about me:</p>
+		<ul>
+			<li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[2]}</li>
+		</ul>
+		<p>My skills are: </p>
+		<ul>
+			{skills.map((skill) => <li>{skill}</li>)}
+		</ul>
 	</body>
 </html>
