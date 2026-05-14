@@ -7,6 +7,8 @@ const identity = {
 	hobbies: ["Hiking", "Camping", "Traveling"],
 };
 const skills = ["HTML", "CSS", "PHP", "GO", "Front End Development", "Backend Development", "SaaS", "AI agents"];
+
+const skillColor = "crimson";
 ---
 
 <html lang="en">
@@ -17,13 +19,13 @@ const skills = ["HTML", "CSS", "PHP", "GO", "Front End Development", "Backend De
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Element Flux Blog - {pageTitle}</title>
-		<style>
+		<style define:vars="{{skillColor}}">
 			h1 {
 				color: purple;
 				font-size: 4rm;
 			}
 			.skill {
-				color: green;
+				color: var(--skillColor);
 				font-weight: bold;
 			}
 		</style>
